@@ -1,1 +1,2 @@
 # MINDEN KÉSZ
+:)
