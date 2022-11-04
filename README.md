@@ -1,1 +1,1 @@
-# TESZT
+# MINDEN KÉSZ
