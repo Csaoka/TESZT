@@ -1,0 +1,43 @@
+
+S2
+
+ena
+clock set 12:00:00 4 nov 2022
+conf t
+host S2
+ena sec class123
+no ip domain-l
+lin con 0
+pass cisco123
+login
+logg syn
+exec 8
+exit
+lin vty 0 15
+pass cisco123
+login
+exec 8
+exit
+ser pass
+banner motd #private router#
+
+vlan 20
+name TESZT 1
+vlan 50
+name TESZT 2
+
+int range f0/1-12
+swit mode acc
+swit acc vlan 20
+exit
+int range f0/13-24
+swit mode acc
+swit acc vlan 50
+exit
+
+int g0/1
+swit mode trunk
+swit trunk nativ vlan 99
+swit trunk allo vlan 20,50,99
+exit
+
